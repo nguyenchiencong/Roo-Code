@@ -30,11 +30,13 @@ export type ChutesModelId =
 	| "zai-org/GLM-4.5-Air"
 	| "zai-org/GLM-4.5-FP8"
 	| "zai-org/GLM-4.5-turbo"
+	| "zai-org/GLM-4.6-FP8"
 	| "moonshotai/Kimi-K2-Instruct-75k"
 	| "moonshotai/Kimi-K2-Instruct-0905"
 	| "Qwen/Qwen3-235B-A22B-Thinking-2507"
 	| "Qwen/Qwen3-Next-80B-A3B-Instruct"
 	| "Qwen/Qwen3-Next-80B-A3B-Thinking"
+	| "meituan-longcat/LongCat-Flash-Thinking-FP8"
 
 export const chutesDefaultModelId: ChutesModelId = "deepseek-ai/DeepSeek-R1-0528"
 
@@ -284,6 +286,15 @@ export const chutesModels = {
 		outputPrice: 3,
 		description: "GLM-4.5-turbo model with 128K token context window, optimized for fast inference.",
 	},
+	"zai-org/GLM-4.6-FP8": {
+		maxTokens: 32768,
+		contextWindow: 204800,
+		supportsImages: false,
+		supportsPromptCache: false,
+		inputPrice: 0,
+		outputPrice: 0,
+		description: "GLM-4.6-FP8 model.",
+	},
 	"Qwen/Qwen3-Coder-480B-A35B-Instruct-FP8": {
 		maxTokens: 32768,
 		contextWindow: 262144,
@@ -339,5 +350,14 @@ export const chutesModels = {
 		outputPrice: 0,
 		description:
 			"Reasoning-first model with structured thinking traces for multi-step problems, math proofs, and code synthesis.",
+	},
+	"meituan-longcat/LongCat-Flash-Thinking-FP8": {
+		maxTokens: 32768,
+		contextWindow: 131072,
+		supportsImages: false,
+		supportsPromptCache: false,
+		inputPrice: 0,
+		outputPrice: 0,
+		description: "LongCat-Flash-Thinking-FP8 model.",
 	},
 } as const satisfies Record<string, ModelInfo>
